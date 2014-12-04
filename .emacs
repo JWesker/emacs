@@ -8,7 +8,7 @@
 (color-theme-initialize)
 (color-theme-deep-blue)
 (cua-mode)
-;;(global-linum-mode t)
+(global-linum-mode t)
 (setq tab-width 4) 
 (setq frame-title-format "%b@JWesker")
 
