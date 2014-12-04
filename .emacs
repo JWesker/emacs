@@ -1,12 +1,14 @@
 (add-to-list 'load-path "~/.emacs.d/color-theme")
 (add-to-list 'load-path "~/.emacs.d/lua-mode")
 (add-to-list 'load-path "~/.emacs.d/tab-display")
+(add-to-list 'load-path "~/.emacs.d/fuzzy-el")
+(add-to-list 'load-path "~/.emacs.d/popup-el")
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-deep-blue)
 (cua-mode)
-(global-linum-mode t)
-(setq default-tab-width 4) 
+;;(global-linum-mode t)
 (setq tab-width 4) 
 (setq frame-title-format "%b@JWesker")
 
@@ -32,3 +34,9 @@
 
 (set-fontset-font "fontset-default" 'gb18030 '("Microsoft YaHei" . "unicode-bmp"))
 (run-with-idle-timer 1 nil 'w32-send-sys-command 61488)
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
+(ac-config-default)
+
+(setq ac-fuzzy-enable t)
