@@ -4,6 +4,7 @@
 (add-to-list 'load-path "~/.emacs.d/fuzzy-el")
 (add-to-list 'load-path "~/.emacs.d/popup-el")
 (add-to-list 'load-path "~/.emacs.d/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/ecb")
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-deep-blue)
@@ -41,3 +42,9 @@
 (ac-config-default)
 
 (setq ac-fuzzy-enable t)
+
+
+(global-ede-mode 1)                      ; Enable the Project management system
+
+
+(require 'ecb)
