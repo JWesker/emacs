@@ -81,8 +81,8 @@
 ;; to project-def except for their "mk-proj-" prefix.
 ;; ---------------------------------------------------------------------
 
-(defvar mk-proj-find-cmd "find")
-(defvar mk-proj-grep-cmd "grep")
+(defvar mk-proj-find-cmd "C:\\cygwin\\bin\\find.exe")
+(defvar mk-proj-grep-cmd "C:\\cygwin\\bin\\grep.exe")
 (defvar mk-proj-idle-timer nil)
 
 (defvar mk-proj-name nil
@@ -97,7 +97,7 @@ expand-file-name. Example: ~me/my-proj/.")
   "if not nil ,search the subdir list from basedir,Otherwise,search all subdir from basedir")
 
 (defvar mk-proj-idle-index nil)
-(defvar mk-proj-default-config-dir "~/.emacs.d/mkprjs/")
+(defvar mk-proj-default-config-dir "s:/mkprjs/")
 (defvar mk-proj-src-patterns nil
   "List of shell patterns to include in the TAGS file. Optional. Example:
 '(\"*.java\" \"*.jsp\").
