@@ -53,7 +53,35 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ecb-options-version "2.40"))
+ '(ecb-options-version "2.40")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2)))
+ 
+(global-set-key [M-left] 'windmove-left)
+(global-set-key [M-right] 'windmove-right)
+(global-set-key [M-up] 'windmove-up)
+(global-set-key [M-down] 'windmove-down)
 
 (load-file "~/.emacs.d/mk-prj.el")
 (project-init)
+(setq imenu-auto-rescan t)
+
+(global-set-key [(f1)] 'project-grep)
+(global-set-key [(f2)] 'project-find-file)
+(global-set-key [(f6)] 'project-multi-occur)
+
+(global-set-key [(f10)] 'project-find-tag)   
+(global-set-key [(f11)] 'pop-tag-mark)
+(global-set-key [(f12)] 'project-find-tag-exact)  ;如果存在唯一tag，直接跳转，多个tag，列出所有匹配tag供选择 
+;project-find-tag-exact和project-find-tag的区别是会match word
+(global-set-key (kbd "C-c p l") 'project-load)
+(global-set-key (kbd "C-c p u") 'project-unload)
+(global-set-key (kbd "C-c p i") 'project-index)
+(global-set-key (kbd "C-c p s") 'project-status)
+(global-set-key (kbd "C-c p d") 'project-dired)
+(global-set-key (kbd "C-c p t") 'project-tags)
+
+(defun change-major-mode-hook ()
+  (modify-syntax-entry ?_ "w"))
+
+(change-major-mode-hook)
+(add-hook 'lua-mode-hook 'change-major-mode-hook)
